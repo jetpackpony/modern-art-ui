@@ -4,14 +4,71 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.ponypod.modernartui.MainActivity">
 
-    <TextView
-        android:text="Hello World!"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginRight="5dp"
+            android:layout_height="match_parent">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="3"
+                android:background="#5e3448"
+                android:layout_gravity="center_horizontal"></FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:background="#20457c"
+                android:layout_gravity="center_horizontal"></FrameLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="5dp"
+            android:layout_height="match_parent">
+
+             <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                 android:layout_marginBottom="10dp"
+                android:background="#fb6648"
+                android:layout_gravity="center_horizontal"></FrameLayout>
+
+             <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:background="#ecdfbd"
+                android:layout_gravity="center_horizontal"></FrameLayout>
+
+             <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                 android:layout_marginTop="10dp"
+                android:background="#3b3a35"
+                android:layout_gravity="center_horizontal"></FrameLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/seekBar" />
 </RelativeLayout>
