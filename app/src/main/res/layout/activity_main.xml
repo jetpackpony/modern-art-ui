@@ -19,18 +19,20 @@
             android:layout_height="match_parent">
 
             <FrameLayout
+                android:id="@+id/square_1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
+                android:background="@color/square1"
                 android:layout_weight="3"
-                android:background="#5e3448"
                 android:layout_gravity="center_horizontal"></FrameLayout>
 
             <FrameLayout
+                android:id="@+id/square_2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="4"
-                android:background="#20457c"
+                android:background="@color/square2"
                 android:layout_gravity="center_horizontal"></FrameLayout>
         </LinearLayout>
 
@@ -42,26 +44,29 @@
             android:layout_height="match_parent">
 
              <FrameLayout
+                 android:id="@+id/square_3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                  android:layout_marginBottom="10dp"
-                android:background="#fb6648"
+                android:background="@color/square3"
                 android:layout_gravity="center_horizontal"></FrameLayout>
 
              <FrameLayout
+                 android:id="@+id/square_4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
-                android:background="#ecdfbd"
+                android:background="@color/square4"
                 android:layout_gravity="center_horizontal"></FrameLayout>
 
              <FrameLayout
+                 android:id="@+id/square_5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
                  android:layout_marginTop="10dp"
-                android:background="#3b3a35"
+                android:background="@color/square5"
                 android:layout_gravity="center_horizontal"></FrameLayout>
         </LinearLayout>
     </LinearLayout>
