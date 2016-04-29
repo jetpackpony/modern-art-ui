@@ -1,11 +1,17 @@
 package com.ponypod.modernartui;
 
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.FrameLayout;
 import android.widget.SeekBar;
 
@@ -51,4 +57,80 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.more_info:
+                showMoreInfo();
+                return true;
+            default:
+                return  super.onOptionsItemSelected(item);
+        }
+    }
+
+    public void showMoreInfo() {
+        DialogFragment more = MoreInfoDialog.newInstance();
+        more.show(getSupportFragmentManager(), "MoreInfo");
+    }
+
+    public static class MoreInfoDialog extends DialogFragment {
+
+        public static MoreInfoDialog newInstance() {
+            return new MoreInfoDialog();
+        }
+
+        @Override
+        public Dialog onCreateDialog(Bundle savedInstanceState) {
+            return new AlertDialog.Builder(getActivity())
+                    .setMessage(R.string.dialog_title)
+                    .setPositiveButton(R.string.dialog_visit_moma, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            Log.i(TAG, "Going to MOMA");
+                        }
+                    })
+                    .setNegativeButton(R.string.dialog_not_now, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            Log.i(TAG, "Clicked not now");
+                        }
+                    })
+                    .create();
+        }
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
