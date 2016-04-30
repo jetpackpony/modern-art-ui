@@ -2,8 +2,10 @@ package com.ponypod.modernartui;
 
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
+import android.net.Uri;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
@@ -15,8 +17,11 @@ import android.view.MenuItem;
 import android.widget.FrameLayout;
 import android.widget.SeekBar;
 
+import java.net.URL;
+
 public class MainActivity extends AppCompatActivity {
 
+    private static final String URL = "http://moma.org/";
     private static final String TAG = "MainActivity";
     private SeekBar seekBar;
     private FrameLayout square1;
@@ -93,13 +98,14 @@ public class MainActivity extends AppCompatActivity {
                     .setPositiveButton(R.string.dialog_visit_moma, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            Log.i(TAG, "Going to MOMA");
+                            Intent goMoma = new Intent(Intent.ACTION_VIEW, Uri.parse(URL));
+                            startActivity(goMoma);
                         }
                     })
                     .setNegativeButton(R.string.dialog_not_now, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            Log.i(TAG, "Clicked not now");
+                            dialog.dismiss();
                         }
                     })
                     .create();
